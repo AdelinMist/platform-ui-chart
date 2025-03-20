@@ -5,6 +5,8 @@ import data_plugins as dp
 class LinuxMachine(BaseModel):
     __icon: str = ':material/ac_unit:'
     
+    #__json_schema_template_name: str = 'linux_machine.jinja'
+    
     hostname: str = Field(description="The machine hostname.")  # the previous defined Enum class
     
     ipAddress: str = Field(description="The machine ip address.")

@@ -11,7 +11,7 @@ image:
   # This sets the pull policy for images.
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "1.0.0"
+  tag: "1.0.1"
 
 # This is for the secrets for pulling an image from a private repository more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 imagePullSecrets: []
@@ -111,6 +111,9 @@ volumes:
   - name: validation-classes
     configMap:
         name: "validation-classes"
+  - name: json-schema-templates
+    configMap:
+        name: "json-schema-templates"
 
 # Additional volumeMounts on the output Deployment definition.
 volumeMounts:
@@ -119,6 +122,9 @@ volumeMounts:
     readOnly: true
   - name: validation-classes
     mountPath: "/app/src/validation_classes"
+    readOnly: true
+  - name: json-schema-templates
+    mountPath: "/app/src/json_schema_templates"
     readOnly: true
 
 nodeSelector: {}
