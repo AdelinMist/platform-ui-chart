@@ -114,6 +114,9 @@ volumes:
   - name: json-schema-templates
     configMap:
         name: "json-schema-templates"
+  - name: streamlit-secrets
+    secret:
+        name: "streamlit-secrets"
 
 # Additional volumeMounts on the output Deployment definition.
 volumeMounts:
@@ -125,6 +128,9 @@ volumeMounts:
     readOnly: true
   - name: json-schema-templates
     mountPath: "/app/src/json_schema_templates"
+    readOnly: true
+  - name: streamlit-secrets
+    mountPath: "/app/.streamlit/secrets.toml"
     readOnly: true
 
 nodeSelector: {}

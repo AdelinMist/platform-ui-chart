@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: json-schema-templates
 data:
-{{ (.Files.Glob  "json_schema_templates/*.jinja").AsConfig | indent 2 }}
+{{ (.Files.Glob  "files/json_schema_templates/*.jinja").AsConfig | indent 2 }}

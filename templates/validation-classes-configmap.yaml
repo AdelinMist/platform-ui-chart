@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: validation-classes
 data:
-{{ (.Files.Glob  "validation_classes/*.py").AsConfig | indent 2 }}
+{{ (.Files.Glob  "files/validation_classes/*.py").AsConfig | indent 2 }}

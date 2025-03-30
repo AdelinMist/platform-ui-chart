@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: data-plugins
 data:
-{{ (.Files.Glob  "data_plugins/*.py").AsConfig | indent 2 }}
+{{ (.Files.Glob  "files/data_plugins/*.py").AsConfig | indent 2 }}
