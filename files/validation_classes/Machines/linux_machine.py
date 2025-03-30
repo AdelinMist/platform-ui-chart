@@ -1,9 +1,10 @@
 from pydantic import field_validator, Field, BaseModel
-from typing import Annotated
 import data_plugins as dp
-
-class WindowsMachine(BaseModel):
-    __icon: str = ':material/sword_rose:'
+    
+class LinuxMachine(BaseModel):
+    __icon: str = ':material/ac_unit:'
+    
+    #__json_schema_template_name: str = 'linux_machine.jinja'
     
     hostname: str = Field(description="The machine hostname.")  # the previous defined Enum class
     

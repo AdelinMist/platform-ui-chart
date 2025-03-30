@@ -1,6 +1,15 @@
+---
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: validation-classes
+  name: validation-classes-general
 data:
-{{ (.Files.Glob  "files/validation_classes/*.py").AsConfig | indent 2 }}
+{{ (.Files.Glob  "files/validation_classes/General/*.py").AsConfig | indent 2 }}
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: validation-classes-machines
+data:
+{{ (.Files.Glob  "files/validation_classes/Machines/*.py").AsConfig | indent 2 }}
